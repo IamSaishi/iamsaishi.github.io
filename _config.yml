@@ -17,7 +17,7 @@ timezone: Africa/Johannesburg
 title: Saishi # the main title
 
 
-tagline: ""Hi, I'm Saishi! This is where I document my security research, from finding bugs and solving CTF challenges to exploring defensive techniques."
+tagline: "Hi, I'm Saishi! This is where I document my security research, from bug bounty reports and solving CTF challenges to exploring Offensive and Defensive Security in detail."
 
 
 description: >- # used by seo meta and the atom feed
