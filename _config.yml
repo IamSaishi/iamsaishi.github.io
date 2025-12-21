@@ -103,7 +103,7 @@ avatar: https://yt3.googleusercontent.com/umeItqYA1juCmoJwQi4zC9tmwHt6ttexjb1r-Y
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: https://yt3.googleusercontent.com/umeItqYA1juCmoJwQi4zC9tmwHt6ttexjb1r-YnKbI3oPXrlM56LFSXmke893a4I8Fs41X1Qu-4=s160-c-k-c0x00ffffff-no-rj # string, local or CORS resources
+social_preview_image:  # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
