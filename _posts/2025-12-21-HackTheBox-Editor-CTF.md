@@ -1,6 +1,6 @@
 ---
-title: "hello"
-date: 2023-06-03 00:00:00 +0800
+title: "HackTheBox - Editor"
+date: 2023-12-21 00:00:00 +0800
 categories: [HackTheBox - Easy Machines]
 tags: [HackTheBox CTFs]
 ---
