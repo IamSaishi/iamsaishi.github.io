@@ -16,8 +16,8 @@ timezone: Africa/Johannesburg
 
 title: Saishi # the main title
 
-tagline: Hi, I'm Saishi, a security researcher and this is where I write about the stuff I’m exploring in security: breaking things, fixing things, bug bounty wins, CTF challenges, and practical research. 
-  This blog is my way of sharing what I learn in a way that’s clear, useful, and sometimes a bit fun. # it will display as the subtitle
+
+tagline: Hi, I'm Saishi, a security researcher and this is where I write about the stuff I’m exploring in security: breaking things, fixing things, bug bounty wins, CTF challenges, and practical research. This blog is my way of sharing what I learn in a way that’s clear, useful, and sometimes a bit fun. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Security research grounded in real-world offense and defense. Saishi. Security. Hacking.
