@@ -9,17 +9,18 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://zones.arilyn.cc
-timezone:
+timezone: Africa/Johannesburg
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Saishi # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Security research grounded in real-world offense and defense # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  I write about the stuff I’m exploring in security: breaking things, fixing things, bug bounty wins, CTF challenges, and practical research. 
+  This blog is my way of sharing what I learn in a way that’s clear, useful, and sometimes a bit fun. Saishi.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -98,7 +99,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://yt3.googleusercontent.com/umeItqYA1juCmoJwQi4zC9tmwHt6ttexjb1r-YnKbI3oPXrlM56LFSXmke893a4I8Fs41X1Qu-4=s160-c-k-c0x00ffffff-no-rj
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
