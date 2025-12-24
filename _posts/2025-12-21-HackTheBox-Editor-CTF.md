@@ -278,8 +278,8 @@ oliver
 
 The output returned a user named `oliver`. I attempted SSH login as `oliver` using the same password:
 
-**Username:** oliver
-**Password:** theEd1t0rTeam99
+- **Username:** oliver
+- **Password:** theEd1t0rTeam99
 
 ```
 ssh oliver@10.10.11.80
