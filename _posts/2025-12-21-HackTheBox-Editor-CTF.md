@@ -4,17 +4,17 @@ date: 2023-12-21 00:00:00 +0800
 categories: [HackTheBox - Easy Machines]
 tags: [HackTheBox CTFs]
 ---
-## Summary
 
-Editor is an Easy Linux machine that has us looking for vulnerable services that we can use to get an initial foothold on the target. Through a outdated and vulnerable instance of XWiki, we are able to take advantage of this to get Remote Code Execution on the Target Server. Once we get a reverse shell, we can find configuration files for XWiki where one of them contains credentials. We can then reuse the credentials on another users to log in to the SSH service. Once getting in, we perform Linux Privilege Escalation checks and find we can perform a Untrusted search path vulnerability attack to gain Local privilege escalation to root. 
+Editor is an easy-difficulty Linux machine that requires identifying vulnerable services to gain an initial foothold. An outdated instance of XWiki is exposed and vulnerable to remote code execution, which is leveraged to obtain a reverse shell on the target. Post-exploitation enumeration of XWiki configuration files reveals reusable credentials, which are successfully used to authenticate to the SSH service as another user. From there, standard Linux privilege escalation checks uncover an untrusted search path vulnerability, allowing escalation to root.
 
 ---
+
 ## 1. Enumeration Phase
 #### Host Discovery
 
 We start with enumerating the target. Before starting my service scans, I always run a `ping` request *(ICMP Echo Requests)* to the target. We can see this below.
 
-```
+```shell
 └─$ ping 10.10.11.80                
 PING 10.10.11.80 (10.10.11.80) 56(84) bytes of data.
 64 bytes from 10.10.11.80: icmp_seq=1 ttl=63 time=188 ms
@@ -25,11 +25,12 @@ We can see that we receive an *ICMP Echo Reply* from the target indicating that 
 reachable.
 
 ---
+
 #### Port and Service Enumeration
 
 I then perform a full TCP port scan, followed by service and version detection on discovered ports.
 
-```
+```shell
 └─$ ports=$(nmap -p- --min-rate=1000 -T4 10.10.11.80 | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) 
 
 └─$ nmap -p$ports -sC -sV 10.10.11.80
@@ -57,21 +58,23 @@ PORT     STATE SERVICE VERSION
 I first map all services and their detected versions identified during the port scan to gain a clear understanding of the exposed attack surface before manually interacting with the web applications.
 
 ---
+
 #### Virtual Host Resolution
 
 Before doing so, whenever a domain is referenced in the Nmap output, such as through an `http-title: Did not follow redirect to` message, I add the domain to the `/etc/hosts` file to ensure proper resolution during further testing.
 
-```
+```shell
 └─$ echo "10.10.11.80 editor.htb" | sudo tee -a /etc/hosts  
 10.10.11.80 editor.htb
 ```
 
 ---
+
 #### Web Enumeration - `editor.htb`
 
 With the domain now added to the `/etc/hosts` file, I proceed to examine the web application. While manually reviewing the site, I also begin directory fuzzing using `gobuster` to identify any hidden or unlinked resources.
 
-```
+```shell
 └─$ gobuster dir -u http://editor.htb/ -w /usr/share/seclists/Discovery/Web-Content/common.txt
 
 ...
@@ -96,6 +99,7 @@ Clicking the **Docs** link in the navigation bar returns an error in the browser
 ![[Pasted image 20251224002758.png]]
 
 ---
+
 #### Wiki Subdomain Discovery
 
 This looks like a new subdomain we can add to `/etc/hosts` file.
