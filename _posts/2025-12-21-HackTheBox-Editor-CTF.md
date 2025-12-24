@@ -100,7 +100,7 @@ Clicking the **Docs** link in the navigation bar returns an error in the browser
 
 This looks like a new subdomain we can add to `/etc/hosts` file.
 
-```
+```shell
 echo "10.10.11.80 wiki.editor.htb" | sudo tee -a /etc/hosts
 ```
 
