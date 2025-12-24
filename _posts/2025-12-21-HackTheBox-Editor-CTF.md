@@ -96,7 +96,7 @@ The directory fuzzing doesn't yield much. Navigating to `http://editor.htb/asset
 
 Clicking the **Docs** link in the navigation bar returns an error in the browser. Reviewing this request in the Burp Suite browser reveals a reference to a previously unknown subdomain.
 
-![Description](assets/HTB - Editor CTF - img1)
+![Description](assets/HTB - Editor CTF - img1.png)
 
 ---
 
