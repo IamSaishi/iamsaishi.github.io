@@ -1,3 +1,25 @@
-<!-- _includes/head.html -->
+{% comment %}
+  Chirpy head.html override
+  Keeps default theme features but sets a custom favicon
+{% endcomment %}
+
+<!-- Custom Favicon -->
 <link rel="shortcut icon" href="{{ '/assets/Saishi-icon.ico' | relative_url }}">
 <link rel="icon" href="{{ '/assets/Saishi-icon.ico' | relative_url }}">
+
+<!-- Existing Chirpy head content -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+{% seo %}
+{% if site.cdn %}
+<link rel="preload" href="{{ site.cdn }}/assets/css/style.css" as="style">
+{% else %}
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% endif %}
+
+{% include head_custom.html %}
+
