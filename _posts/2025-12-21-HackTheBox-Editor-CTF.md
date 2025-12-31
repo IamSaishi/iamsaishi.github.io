@@ -1,6 +1,6 @@
 ---
 title: "HackTheBox - Editor"
-date: 2023-12-21 00:00:00 +0800
+date: 2025-12-21 00:00:00 +0800
 categories: [HackTheBox - Easy Machines]
 tags: [HackTheBox CTFs]
 ---
