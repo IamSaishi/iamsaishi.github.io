@@ -175,7 +175,7 @@ smb: \> get Upgrade_Notice.pdf
 
 Upon inspection, we see the below:
 
-![Description](assets/HTB - Fluffy CTF - img1.png)
+![Description](assets/HTB-Fluffy-CTF-Images/HTB - Fluffy CTF - img1.png)
 
 The document appears to be an internal IT communication referencing upcoming system upgrades and associated security patches.
 
@@ -257,7 +257,7 @@ Boom!!!!
 
 We got the `NTLMv2` Hash for the user `p.agila`
 
-![Description](assets/HTB - Fluffy CTF - img2.png)
+![Description](assets/HTB-Fluffy-CTF-Images/HTB - Fluffy CTF - img2.png)
 
 ```
 p.agila::FLUFFY:644b9cbaaf880144:3F3684DC990FFB9906EBB0E5D6B45427:010100000000000080296AF37E91DC016E1C33453059CD780000000002000800550049004600390001001E00570049004E002D0044004700560036004A0033004100480032004500420004003400570049004E002D0044004700560036004A003300410048003200450042002E0055004900460039002E004C004F00430041004C000300140055004900460039002E004C004F00430041004C000500140055004900460039002E004C004F00430041004C000700080080296AF37E91DC0106000400020000000800300030000000000000000100000000200000D8480478ECF3918210582A99C27A11A530F7F26EDA0EBACFEF99D01EE675F32B0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00380030000000000000000000
@@ -276,7 +276,7 @@ Once saved, I begin the cracking with Hashcat:
 hashcat -m 5600 agilaNTLMHash.txt /usr/share/wordlists/rockyou.txt
 ```
 
-![Description](assets/HTB - Fluffy CTF - img3.png)
+![Description](assets/HTB-Fluffy-CTF-Images/HTB - Fluffy CTF - img3.png)
 
 YAY!!!! 
 
@@ -299,7 +299,7 @@ With valid domain credentials, I began post-exploitation by enumerating Active D
 
 After ingesting the data into BloodHound, the graph revealed an interesting privilege chain.
 
-![Description](assets/HTB - Fluffy CTF - img4.png)
+![Description](assets/HTB-Fluffy-CTF-Images/HTB - Fluffy CTF - img4.png)
 
 The user `P.AGILA@FLUFFY.HTB` is a member of the `Service Account Managers` group. This group has **GenericAll** rights on the `Service Accounts` group.  This group has access to more users so would be good if we can attempt to join the group.
 
@@ -614,4 +614,4 @@ Confirming administrative access:
 
 YAY!!! All done... 
 
-![Description](assets/HTB - Fluffy CTF - img5.png)
+![Description](assets/HTB-Fluffy-CTF-Images/HTB - Fluffy CTF - img5.png)
